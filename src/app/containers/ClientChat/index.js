@@ -5,6 +5,7 @@ import AuthService from "@services/AuthService";
 import bus from "@frame/bus";
 import {busEvents} from "@app/constants";
 import store from '@modules/store';
+import Socket from "@modules/socket";
 
 const messages = [
 	{isSender: true, message: 'Hekki'},
@@ -68,6 +69,11 @@ export default class ClientChat extends Component {
 		this.data.messages.push({
 			isSender: true,
 			message
+		});
+
+		Socket.send('send-message', {
+			message,
+			accountId: this.data.user.id,
 		});
 
 		this.stateChanged();

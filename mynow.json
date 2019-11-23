@@ -1,0 +1,18 @@
+{
+	"version": 2,
+	"name": "support-fwork",
+	"alias": ["support-fwork"],
+	"builds": [
+		{
+			"src": "package.json",
+			"use": "@now/static-build",
+			"config": {
+				"distDir": "dist"
+			}
+		}
+	],
+	"routes": [
+		{ "handle": "filesystem" },
+		{ "src": "/(.*)", "dest": "/index.html" }
+	]
+}

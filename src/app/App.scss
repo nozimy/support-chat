@@ -16,3 +16,16 @@ html, body {
 .outlet {
 	height: 100%;
 }
+
+.no-access-wrap {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 100%;
+}
+
+.no-access-text {
+	text-align: center;
+	padding: 20px;
+	font-size: 1.5em;
+}

@@ -18,8 +18,11 @@ class Socket {
 
 	};
 
-	onMessage = () => {
+	onMessage = event => {
+		const data = event.data;
+		const message = JSON.parse(data);
 
+		bus.emit(message.action, message.payload);
 	};
 
 	onError = () => {

@@ -2,12 +2,12 @@ import Component from '@frame/Component';
 import template from './index.handlebars';
 import './index.scss';
 
-export default class Admin extends Component {
-	constructor({ children = [], ...props }) {
+export default class HeaderTitle extends Component {
+	constructor({title = "", ...props}) {
 		super(props);
 
 		this.data = {
-			children,
+			title,
 		};
 	}
 
@@ -18,12 +18,6 @@ export default class Admin extends Component {
 			...this.data,
 		});
 
-		this.attachToParent();
-
 		return this.html;
-	}
-
-	postRender() {
-
 	}
 }
